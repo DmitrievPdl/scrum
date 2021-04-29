@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 
+
 class Sprint(models.Model):
     
     name = models.CharField(max_length=100, blank=True, default='')
@@ -9,6 +10,7 @@ class Sprint(models.Model):
 
     def __str__(self):
         return self.name or f'Sprint ending {self.end}'
+
 
 class Task(models.Model):
     """Unit of work to be done for the sprint."""

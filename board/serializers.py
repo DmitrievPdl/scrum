@@ -21,6 +21,9 @@ class SprintSerializer(serializers.ModelSerializer):
         return {
             'self': reverse('sprint-detail',
                 kwargs={'pk': obj.pk}, request=request),
+            # links to all task in this sprint
+            'tasks': reverse('task-list', request=request) + 
+                f'?sprint={obj.pk}',
         }
 
 

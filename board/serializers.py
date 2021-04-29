@@ -20,7 +20,7 @@ class SprintSerializer(serializers.ModelSerializer):
         request = self.context['request']
         return {
             'self': reverse('sprint-detail',
-                kwargs={'pk': obj.pk}),
+                kwargs={'pk': obj.pk}, request=request),
         }
 
 
